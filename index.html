@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Report of eMMC partitions</title>
+        <link rel="stylesheet" href="ampart.css">
+    </head>
+    <body>
+        <h1>DTB</h1>
+        <p id="pDSnapshot">无快照，请检查请求URL<br>No snapshot, please check your URL</p>
+        <table>
+            <thead>
+                <tr class="trHead">
+                    <th class="tcName">分区名<br>Name</th>
+                    <th class="tcSize">大小 <i>(十进制)</i><br>Size <i>(decimal)</i></th>
+                    <th class="tcSize">大小 <i>(十六进制)</i><br>Size <i>(hex-decimal)</i></th>
+                    <th class="tcSize">大小 <i>(人类可读)</i><br>Size <i>(human-readable)</i></th>
+                    <th class="tcMasks">掩码<br>Masks</th>
+                </tr>
+            </thead>
+            <tbody id="tbDTB">
+                <tr>
+                    <td class="tcName">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcMasks">-</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>eMMC</h1>
+        <p id="pESnapshot">无快照，请检查请求URL<br>No snapshot, please check your URL</p>
+        <table>
+            <thead>
+                <tr class="trHead">
+                    <th class="tcName">分区名<br>Name</th>
+                    <th class="tcSize">偏移 <i>(十进制)</i><br>Offset <i>(decimal)</i></th>
+                    <th class="tcSize">偏移 <i>(十六进制)</i><br>Offset <i>(hex-decimal)</i></th>
+                    <th class="tcSize">偏移 <i>(人类可读)</i><br>Offset <i>(human-readable)</i></th>
+                    <th class="tcSize">大小 <i>(十进制)</i><br>Size <i>(decimal)</i></th>
+                    <th class="tcSize">大小 <i>(十六进制)</i><br>Size <i>(hex-decimal)</i></th>
+                    <th class="tcSize">大小 <i>(人类可读)</i><br>Size <i>(human-readable)</i></th>
+                    <th class="tcMasks">掩码<br>Masks</th>
+                    <th class="tcWritable">可写入<br>Writable</th>
+                </tr>
+            </thead>
+            <tbody id="tbEPT">
+                <tr>
+                    <td class="tcName">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcSize">-</td>
+                    <td class="tcMasks">-</td>
+                    <td class="tcWritable">-</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <i>© 7Ji 2023. This webpage will show you the result of <a href="https://github.com/7Ji/ampart">ampart</a>, star it if you like it. Check <a href="https://github.com/7Ji/ampart-web-reporter">the repo of this project on Github</a> and star it if you find this page useful, and also my <a href="https://github.com/7Ji">Github account</a>. The project is hosted on my <a href="https://7ji.github.io/">blog site</a> on its dedicated <a href="https://7ji.github.io/ampart-web-reporter">page</a>, but can be run offline just fine.</i>
+        <script src="ampart.js"></script>
+    </body>
+</html>

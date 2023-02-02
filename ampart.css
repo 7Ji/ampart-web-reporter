@@ -1,0 +1,44 @@
+table {
+    background-color: ghostwhite;
+    text-align: center;
+}
+
+.trHead {
+    background-color: gainsboro;
+}
+
+.trGap {
+    color: gray;
+}
+
+.tcName {
+    width: 100px;
+}
+
+.tcSize {
+    width: 180px;
+}
+
+td {
+    border: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: gainsboro;
+}
+
+.tdWritable {
+    color: green
+}
+
+.tdNonWritable {
+    color: red
+}
+
+.tdPartialWritable {
+    color: orange
+}
+
+/* tr  {
+    border-bottom: 3px;
+    border-color: black;
+    color: green
+} */
