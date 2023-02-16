@@ -243,12 +243,10 @@ const reESnapshot = new RegExp(/^([a-zA-Z-_]+:[0-9]+:[0-9]+:[0-9]+ )*[a-zA-Z-_]+
 const reDParg = new RegExp(/^[a-zA-Z-_]+::(-1|[0-9]+):[0-9]+$/)
 const reEParg = new RegExp(/^[a-zA-Z-_]+:[0-9]+:[0-9]+:[0-9]+$/)
 
-// console.log(dSnapshot)
 if (dSnapshot && reDSnapshot.test(dSnapshot)) {
     const dTable = new DTable(dSnapshot)
     dTable.show()
 }
-console.log(eSnapshot)
 if (eSnapshot && reESnapshot.test(eSnapshot)) {
     const eTable = new ETable(eSnapshot)
     eTable.show()
