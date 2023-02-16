@@ -125,6 +125,18 @@ class EPartition extends Partition {
                 content = "yes if you don't need logo"
                 writable = writables.partial
                 break
+            case 'boot_a':
+            case 'vbmeta_a':
+            case 'vbmeta_system_a':
+                content = "yes if you're not using post-SC2(S905X4) device"
+                writable = writables.partial
+                break
+            case 'boot_b':
+            case 'vbmeta_b':
+            case 'vbmeta_system_b':
+                content = "yes if you're not using post-SC2(S905X4) device; yes even if you're using post-SC2(S905X4) device if you keep the corresponding _a part"
+                writable = writables.partial
+                break
             default:
                 content  = "yes"
                 writable = writables.yes
