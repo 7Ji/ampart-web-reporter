@@ -36,18 +36,15 @@ class Partition {
         this.name = pargParts[0]
         this.offset = Number(pargParts[1])
         this.size = Number(pargParts[2])
+        this.sizeRaw = pargParts[2]
         this.masks = Number(pargParts[3])
     }
 
-    fillCellsSize(size, allowNegative, decimal, hex, human) {
-        if (size < 0) {
-            if (allowNegative) {
-                if (size == -1) {
-                    decimal.textContent = "auto-fill"
-                    hex.textContent = "auto-fill"
-                    human.textContent = "auto-fill"
-                }
-            }
+    fillCellsSize(size, isDTB, isSize, decimal, hex, human) {
+        if (isDTB && isSize && (size == -1 || this.sizeRaw == "18446744073709551615")) {
+            decimal.textContent = "auto-fill"
+            hex.textContent = "auto-fill"
+            human.textContent = "auto-fill"
         } else {
             decimal.textContent = size
             hex.textContent = size.toString(16)
@@ -65,14 +62,14 @@ class Partition {
         const cellOffsetDecimal = row.insertCell()
         const cellOffsetHex = row.insertCell()
         const cellOffsetHuman = row.insertCell()
-        this.fillCellsSize(this.offset, false, cellOffsetDecimal, cellOffsetHex, cellOffsetHuman)
+        this.fillCellsSize(this.offset, false, false, cellOffsetDecimal, cellOffsetHex, cellOffsetHuman)
     }
 
-    fillRowSize(row) {
+    fillRowSize(row, isDTB) {
         const cellSizeDecimal = row.insertCell()
         const cellSizeHex = row.insertCell()
         const cellSizetHuman = row.insertCell()
-        this.fillCellsSize(this.size, true, cellSizeDecimal, cellSizeHex, cellSizetHuman)
+        this.fillCellsSize(this.size, isDTB, true, cellSizeDecimal, cellSizeHex, cellSizetHuman)
     }
 
     fillRowMasks(row) {
@@ -92,7 +89,7 @@ class DPartition extends Partition {
     
     fillRow(row) {
         this.fillRowName(row)
-        this.fillRowSize(row)
+        this.fillRowSize(row, true)
         this.fillRowMasks(row)
     }
 }
@@ -109,7 +106,7 @@ class EPartition extends Partition {
     fillRow(row) {
         this.fillRowName(row)
         this.fillRowOffset(row)
-        this.fillRowSize(row)
+        this.fillRowSize(row, false)
         this.fillRowMasks(row)
         const cellWritable = row.insertCell()
         var content = ""
